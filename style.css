@@ -1,0 +1,179 @@
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Arial;
+}
+
+body{
+background:#f5f7fb;
+color:#1e293b;
+}
+
+.header{
+background:linear-gradient(135deg,#1e3a8a,#2563eb);
+color:white;
+padding-bottom:80px;
+}
+
+.navbar{
+display:flex;
+justify-content:space-between;
+padding:20px 50px;
+}
+
+.nav-links{
+display:flex;
+gap:25px;
+list-style:none;
+}
+
+.nav-links a{
+color:white;
+text-decoration:none;
+font-weight:600;
+}
+
+.hero{
+text-align:center;
+padding:150px 20px 120px 20px;
+max-width:800px;
+margin:auto;
+}
+
+.hero h1{
+font-size:64px;
+margin-bottom:25px;
+}
+
+.hero p{
+margin-bottom:30px;
+}
+
+.button{
+background:white;
+color:#2563eb;
+padding:12px 25px;
+border-radius:10px;
+text-decoration:none;
+font-weight:bold;
+}
+
+section{
+padding:80px 20px;
+text-align:center;
+}
+
+.image{
+width:60%;
+max-width:600px;
+margin:40px auto;
+display:block;
+border-radius:12px;
+box-shadow:0 15px 35px rgba(0,0,0,0.15);
+}
+
+.cards{
+display:flex;
+justify-content:center;
+gap:30px;
+flex-wrap:wrap;
+}
+
+.card{
+background:white;
+padding:25px;
+width:250px;
+border-radius:12px;
+box-shadow:0 10px 30px rgba(0,0,0,0.1);
+transition:0.3s;
+}
+
+.card:hover{
+transform:translateY(-8px);
+box-shadow:0 20px 40px rgba(0,0,0,0.2);
+}
+
+.card button{
+margin-top:10px;
+background:#2563eb;
+color:white;
+border:none;
+padding:10px;
+border-radius:8px;
+cursor:pointer;
+}
+
+.stories-container{
+display:flex;
+justify-content:center;
+gap:30px;
+flex-wrap:wrap;
+margin-top:40px;
+}
+
+.story{
+background:white;
+width:280px;
+padding:20px;
+border-radius:14px;
+box-shadow:0 10px 25px rgba(0,0,0,0.1);
+text-align:center;
+}
+
+.story img{
+width:120px;
+height:120px;
+object-fit:cover;
+border-radius:50%;
+margin-bottom:15px;
+}
+
+.search-box{
+margin:20px;
+}
+
+.search-box input{
+padding:10px;
+width:250px;
+border-radius:6px;
+border:1px solid #ccc;
+}
+
+form{
+display:flex;
+flex-direction:column;
+gap:10px;
+width:300px;
+margin:auto;
+}
+
+form input,textarea{
+padding:10px;
+border-radius:6px;
+border:1px solid #ccc;
+}
+
+form button{
+background:#2563eb;
+color:white;
+border:none;
+padding:10px;
+border-radius:6px;
+cursor:pointer;
+}
+
+footer{
+background:#0f172a;
+color:white;
+padding:50px;
+text-align:center;
+}
+
+footer p{
+margin:10px 0;
+}
+
+
+
+
