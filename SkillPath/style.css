@@ -36,11 +36,18 @@ font-weight:600;
 
 .hero{
 text-align:center;
-padding:100px 20px;
+padding:150px 20px 120px 20px;
+max-width:800px;
+margin:auto;
 }
 
 .hero h1{
-font-size:60px;
+font-size:64px;
+margin-bottom:25px;
+}
+
+.hero p{
+margin-bottom:30px;
 }
 
 .button{
@@ -60,9 +67,10 @@ text-align:center;
 .image{
 width:60%;
 max-width:600px;
-margin:30px auto;
+margin:40px auto;
 display:block;
-border-radius:10px;
+border-radius:12px;
+box-shadow:0 15px 35px rgba(0,0,0,0.15);
 }
 
 .cards{
@@ -82,7 +90,8 @@ transition:0.3s;
 }
 
 .card:hover{
-transform:translateY(-5px);
+transform:translateY(-8px);
+box-shadow:0 20px 40px rgba(0,0,0,0.2);
 }
 
 .card button{
@@ -95,19 +104,29 @@ border-radius:8px;
 cursor:pointer;
 }
 
+.stories-container{
+display:flex;
+justify-content:center;
+gap:30px;
+flex-wrap:wrap;
+margin-top:40px;
+}
+
 .story{
 background:white;
+width:280px;
 padding:20px;
-margin:20px auto;
-width:60%;
-border-radius:12px;
-box-shadow:0 10px 30px rgba(0,0,0,0.1);
+border-radius:14px;
+box-shadow:0 10px 25px rgba(0,0,0,0.1);
+text-align:center;
 }
 
 .story img{
 width:120px;
+height:120px;
+object-fit:cover;
 border-radius:50%;
-margin-bottom:10px;
+margin-bottom:15px;
 }
 
 .search-box{
@@ -147,6 +166,14 @@ cursor:pointer;
 footer{
 background:#0f172a;
 color:white;
-padding:40px;
-margin-top:50px;
+padding:50px;
+text-align:center;
 }
+
+footer p{
+margin:10px 0;
+}
+
+
+
+
