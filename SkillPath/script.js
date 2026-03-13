@@ -1,58 +1,61 @@
-// обработка формы
+// поиск стажировок
 
-document.querySelector(".contact-form").addEventListener("submit", function(e){
+const searchInput = document.getElementById("searchInput")
 
-e.preventDefault();
+searchInput.addEventListener("keyup", function(){
 
-alert("Спасибо! Сообщение отправлено.");
+let filter = searchInput.value.toLowerCase()
 
-this.reset();
+let cards = document.querySelectorAll(".card")
 
-});
+cards.forEach(card => {
+
+let text = card.innerText.toLowerCase()
+
+if(text.includes(filter)){
+
+card.style.display = "block"
+
+}
+
+else{
+
+card.style.display = "none"
+
+}
+
+})
+
+})
 
 
-// кнопки стажировок
 
-const buttons = document.querySelectorAll(".card button");
+// кнопки подачи заявки
+
+const buttons = document.querySelectorAll(".applyBtn")
 
 buttons.forEach(button => {
 
 button.addEventListener("click", function(){
 
-alert("Заявка скоро будет доступна на платформе SkillPath.");
+alert("Заявка отправлена! Мы скоро свяжемся с вами.")
 
-});
+})
 
-});
-
-
-// плавная прокрутка
-
-document.querySelectorAll("a[href^='#']").forEach(anchor => {
-
-anchor.addEventListener("click", function(e){
-
-e.preventDefault();
-
-document.querySelector(this.getAttribute("href")).scrollIntoView({
-behavior: "smooth"
-});
-
-});
-
-});
+})
 
 
-// simple search demo
 
-const searchButton = document.querySelector(".search-section button");
+// форма контакта
 
-if(searchButton){
+const form = document.getElementById("contactForm")
 
-searchButton.addEventListener("click", function(){
+form.addEventListener("submit", function(e){
 
-alert("Поиск стажировок скоро будет доступен!");
+e.preventDefault()
 
-});
+alert("Спасибо! Сообщение отправлено.")
 
-}
+form.reset()
+
+})
