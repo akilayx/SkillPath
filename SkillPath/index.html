@@ -80,9 +80,7 @@ SkillPath помогает студентам и школьникам наход
 <div class="search-box">
 
 <input type="text" id="searchInput" placeholder="Поиск стажировки...">
-
-</div>
-
+<button onclick="openInternships()">Поиск</button>
 
 
 <div class="cards" id="cardsContainer">
@@ -94,7 +92,7 @@ SkillPath помогает студентам и школьникам наход
 
 <p>Работа с HTML CSS JavaScript</p>
 
-<button class="applyBtn">Подать заявку</button>
+<button class="applyBtn" onclick="openInternships()">Подать заявку</button>
 
 </div>
 
@@ -228,6 +226,62 @@ SkillPath помогает студентам и школьникам наход
 </footer>
 
 <script src="script.js"></script>
+
+
+<!-- ================== СТРАНИЦА СО СТАЖИРОВКАМИ ================== -->
+<section id="internships-page" style="display:none; padding:40px">
+
+  <h1>Все стажировки и программы</h1>
+
+  <input type="text" id="globalSearch" placeholder="Поиск по профессиям..." style="padding:10px; width:100%; max-width:400px">
+
+  <div class="cards" id="allInternships">
+
+    <div class="card">
+      <h3>Веб-разработчик</h3>
+      <p><b>Формат:</b> Онлайн</p>
+      <p><b>Этап 1:</b> Виртуальная стажировка (симуляция)</p>
+      <p><b>Дедлайн:</b> 30 апреля</p>
+      <p><b>Нужно подать:</b></p>
+      <ul>
+        <li>Резюме</li>
+        <li>Короткую мотивацию</li>
+        <li>Онлайн-симуляцию</li>
+      </ul>
+      <button>Подать заявку</button>
+    </div>
+
+    <div class="card">
+      <h3>UX / UI дизайнер</h3>
+      <p><b>Формат:</b> Онлайн + офлайн</p>
+      <p><b>Этап 1:</b> Проектная симуляция</p>
+      <p><b>Дедлайн:</b> 15 мая</p>
+      <p><b>Нужно подать:</b></p>
+      <ul>
+        <li>Резюме</li>
+        <li>Мини-задание</li>
+      </ul>
+      <button>Подать заявку</button>
+    </div>
+
+    <div class="card">
+      <h3>Data Scientist</h3>
+      <p><b>Формат:</b> Онлайн</p>
+      <p><b>Этап 1:</b> Аналитическая симуляция</p>
+      <p><b>Дедлайн:</b> 1 июня</p>
+      <p><b>Нужно подать:</b></p>
+      <ul>
+        <li>Резюме</li>
+        <li>Онлайн-тест</li>
+      </ul>
+      <button>Подать заявку</button>
+    </div>
+
+  </div>
+
+  <br>
+  <button onclick="goBack()">← Назад</button>
+</section>
 
 </body>
 </html>
