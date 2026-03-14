@@ -3,13 +3,13 @@
 
 <head>
 
+<script src="/SkillPath/script.js"></script>
+
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>SkillPath — старт карьеры</title>
-
-<link rel="stylesheet" href="style.css">
-
+<link rel="stylesheet" href="/SkillPath/style.css">
 </head>
 
 
@@ -39,12 +39,7 @@
 <div class="hero" id="home">
 
 <h1>SkillPath</h1>
-
-<p>
-Платформа для поиска стажировок, карьерных программ
-и первых возможностей для студентов и школьников.
-</p>
-
+<p>Платформа для поиска стажировок, карьерных программ и первых возможностей для студентов и школьников.</p>
 <a href="#internships" class="button">Найти стажировку</a>
 
 </div>
@@ -58,14 +53,7 @@
 <h2>О платформе</h2>
 
 <img src="images/Офис-photo.jpg" class="image">
-
-<p>
-
-SkillPath помогает студентам и школьникам находить
-первые карьерные возможности и получать практический опыт.
-
-</p>
-
+<p>SkillPath помогает студентам и школьникам находить первые карьерные возможности и получать практический опыт.</p>
 </section>
 
 
@@ -80,22 +68,17 @@ SkillPath помогает студентам и школьникам наход
 <div class="search-box">
 
 <input type="text" id="searchInput" placeholder="Поиск стажировки...">
-
+<button onclick="openInternships()">Поиск</button>
 </div>
-
-
 
 <div class="cards" id="cardsContainer">
 
 
 <div class="card">
 
-<h3>Веб-разработка</h3>
-
+    <h3>Веб-разработка</h3>
 <p>Работа с HTML CSS JavaScript</p>
-
 <button class="applyBtn">Подать заявку</button>
-
 </div>
 
 
@@ -158,12 +141,7 @@ SkillPath помогает студентам и школьникам наход
 <img src="images/Алина-photo.jpg">
 
 <h3>Алина — IT стажировка</h3>
-
-<p>
-Алина нашла стажировку через SkillPath
-и теперь работает над веб-проектами.
-</p>
-
+<p>Алина нашла стажировку через SkillPath и теперь работает над веб-проектами.</p>
 </div>
 
 
@@ -172,12 +150,7 @@ SkillPath помогает студентам и школьникам наход
 <img src="images/Даниил-photo.jpg">
 
 <h3>Даниил — маркетинг</h3>
-
-<p>
-Даниил участвовал в рекламных кампаниях
-и научился анализировать аудиторию.
-</p>
-
+<p>Даниил участвовал в рекламных кампаниях и научился анализировать аудиторию.</p>
 </div>
 
 
@@ -186,12 +159,7 @@ SkillPath помогает студентам и школьникам наход
 <img src="images/Айжан-photo.jpg">
 
 <h3>Айжан — финтех</h3>
-
-<p>
-Айжан прошла стажировку в финансовой
-компании и получила первый опыт.
-</p>
-
+<p>Айжан прошла стажировку в финансовой компании и получила первый опыт.</p>
 </div>
 
 </div>
@@ -227,7 +195,113 @@ SkillPath помогает студентам и школьникам наход
 
 </footer>
 
-<script src="script.js"></script>
+<!-- ================== СТРАНИЦА СО ВСЕМИ СТАЖИРОВКАМИ ================== -->
+<section id="internships-page" style="display:none; padding:40px">
+
+  <h1>Все стажировки и программы</h1>
+
+  <input type="text" id="globalSearch" placeholder="Поиск по профессиям..." style="padding:10px; width:100%; max-width:400px">
+
+  <div class="cards" id="allInternships">
+
+    <div class="card">
+      <h3>Веб-разработчик</h3>
+      <p><b>Формат:</b> Онлайн</p>
+      <p><b>Этап 1:</b> Виртуальная стажировка (симуляция)</p>
+      <p><b>Дедлайн:</b> 30 апреля</p>
+      <p><b>Нужно подать:</b></p>
+      <ul>
+        <li>Резюме</li>
+        <li>Короткую мотивацию</li>
+        <li>Онлайн-симуляцию</li>
+      </ul>
+      <button>Подать заявку</button>
+    </div>
+
+    <div class="card">
+      <h3>UX / UI дизайнер</h3>
+      <p><b>Формат:</b> Онлайн + офлайн</p>
+      <p><b>Этап 1:</b> Проектная симуляция</p>
+      <p><b>Дедлайн:</b> 15 мая</p>
+      <p><b>Нужно подать:</b></p>
+      <ul>
+        <li>Резюме</li>
+        <li>Мини-задание</li>
+      </ul>
+      <button>Подать заявку</button>
+    </div>
+
+    <div class="card">
+      <h3>Data Scientist</h3>
+      <p><b>Формат:</b> Онлайн</p>
+      <p><b>Этап 1:</b> Аналитическая симуляция</p>
+      <p><b>Дедлайн:</b> 1 июня</p>
+      <p><b>Нужно подать:</b></p>
+      <ul>
+        <li>Резюме</li>
+        <li>Онлайн-тест</li>
+      </ul>
+      <button>Подать заявку</button>
+    </div>
+
+  </div> <!-- конец #allInternships -->
+
+  <br>
+  <button onclick="goBack()">← Назад</button>
+</section>
+
+
+<script>
+// ====== Поиск на главной странице ======
+const searchInput = document.getElementById("searchInput");
+searchInput.addEventListener("keyup", function(){
+  const filter = searchInput.value.toLowerCase();
+  document.querySelectorAll(".card").forEach(card => {
+    const text = card.innerText.toLowerCase();
+    card.style.display = text.includes(filter) ? "block" : "none";
+  });
+});
+
+// ====== Кнопки подачи заявки ======
+document.querySelectorAll(".applyBtn").forEach(button => {
+  button.addEventListener("click", function(){
+    openInternships();
+    alert("Заявка принята! Следующий этап — виртуальная стажировка 🚀");
+  });
+});
+
+// ====== Форма контакта ======
+const form = document.getElementById("contactForm");
+form.addEventListener("submit", function(e){
+  e.preventDefault();
+  alert("Спасибо! Мы скоро с вами свяжемся 💌");
+  form.reset();
+});
+
+// ====== Открытие страницы всех стажировок ======
+function openInternships() {
+  document.querySelectorAll("header, section:not(#internships-page), footer").forEach(el => el.style.display = "none");
+  document.getElementById("internships-page").style.display = "block";
+  document.getElementById("globalSearch").value = searchInput.value.toLowerCase();
+  filterInternships();
+}
+
+// ====== Фильтр на странице стажировок ======
+function filterInternships() {
+  const value = document.getElementById("globalSearch").value.toLowerCase();
+  document.querySelectorAll("#allInternships .card").forEach(card => {
+    card.style.display = card.innerText.toLowerCase().includes(value) ? "block" : "none";
+  });
+}
+
+document.getElementById("globalSearch").addEventListener("input", filterInternships);
+
+// ====== Кнопка Назад ======
+function goBack() {
+  document.querySelectorAll("header, section, footer").forEach(el => el.style.display = "");
+  document.getElementById("internships-page").style.display = "none";
+}
+</script>
 
 </body>
 </html>
