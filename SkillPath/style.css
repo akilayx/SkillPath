@@ -6,6 +6,21 @@
   font-family: "Segoe UI", "Arial", sans-serif;
 }
 
+.skip-link {
+  position: absolute;
+  top: -40px;
+  left: 6px;
+  background: #c9a24d;
+  color: #2e2a25;
+  padding: 8px;
+  text-decoration: none;
+  z-index: 100;         
+}
+
+.skip-link:focus {
+  top: 6px;
+}
+
 body {
   background: #f8f6f2;
   color: #2e2a25;
@@ -263,6 +278,13 @@ form {
   max-width: 520px;
 }
 
+form label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: 600;
+  color: #2e2a25;
+}
+
 form input,
 form textarea {
   width: 100%;
@@ -289,8 +311,19 @@ form button:hover {
 }
 
 /* ================== INTERN PAGE ================== */
+.hidden {
+  display: none;
+}
+
 #internships-page {
   background: #fdfbf7;
+  padding: 40px;
+}
+
+.search-input {
+  padding: 10px;
+  width: 100%;
+  max-width: 400px;
 }
 
 /* ================== FOOTER ================== */
