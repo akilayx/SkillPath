@@ -1,61 +1,76 @@
-// поиск стажировок
+// ================== ПОИСК НА ГЛАВНОЙ ==================
+const searchInput = document.getElementById("searchInput");
 
-const searchInput = document.getElementById("searchInput")
-
-searchInput.addEventListener("keyup", function(){
-
-let filter = searchInput.value.toLowerCase()
-
-let cards = document.querySelectorAll(".card")
-
-cards.forEach(card => {
-
-let text = card.innerText.toLowerCase()
-
-if(text.includes(filter)){
-
-card.style.display = "block"
-
+if (searchInput) {
+  searchInput.addEventListener("keyup", function () {
+    // Ничего не фильтруем на главной
+    // Поиск используется только для перехода
+  });
 }
 
-else{
+// ================== ОТКРЫТИЕ СТРАНИЦЫ СТАЖИРОВОК ==================
+function openInternships() {
+  const query = document.getElementById("searchInput")?.value || "";
 
-card.style.display = "none"
+  // скрываем всё старое
+  document.querySelectorAll("header, section:not(#internships-page), footer")
+    .forEach(el => el.style.display = "none");
 
+  // показываем страницу стажировок
+  const page = document.getElementById("internships-page");
+  page.style.display = "block";
+
+  // передаём поисковый запрос
+  const search = document.getElementById("globalSearch");
+  if (search) {
+    search.value = query.toLowerCase();
+    filterInternships();
+  }
 }
 
-})
+// ================== ВОЗВРАТ НАЗАД ==================
+function goBack() {
+  document.querySelectorAll("header, section, footer")
+    .forEach(el => el.style.display = "");
+  document.getElementById("internships-page").style.display = "none";
+}
 
-})
+// ================== ПОИСК НА СТРАНИЦЕ СТАЖИРОВОК ==================
+function filterInternships() {
+  const value = document.getElementById("globalSearch").value.toLowerCase();
+  const cards = document.querySelectorAll("#allInternships .card");
 
+  cards.forEach(card => {
+    card.style.display = card.innerText.toLowerCase().includes(value)
+      ? "block"
+      : "none";
+  });
+}
 
+document.addEventListener("input", function (e) {
+  if (e.target.id === "globalSearch") {
+    filterInternships();
+  }
+});
 
-// кнопки подачи заявки
+// ================== КНОПКИ ПОДАЧИ ЗАЯВКИ ==================
+document.addEventListener("click", function (e) {
+  if (e.target.classList.contains("applyBtn")) {
+    openInternships();
+  }
 
-const buttons = document.querySelectorAll(".applyBtn")
+  if (e.target.tagName === "BUTTON" && e.target.innerText.includes("Подать")) {
+    alert("Заявка принята! Следующий этап — виртуальная стажировка 🚀");
+  }
+});
 
-buttons.forEach(button => {
+// ================== ФОРМА КОНТАКТА ==================
+const form = document.getElementById("contactForm");
 
-button.addEventListener("click", function(){
-
-alert("Заявка отправлена! Мы скоро свяжемся с вами.")
-
-})
-
-})
-
-
-
-// форма контакта
-
-const form = document.getElementById("contactForm")
-
-form.addEventListener("submit", function(e){
-
-e.preventDefault()
-
-alert("Спасибо! Сообщение отправлено.")
-
-form.reset()
-
-})
+if (form) {
+  form.addEventListener("submit", function (e) {
+    e.preventDefault();
+    alert("Спасибо! Мы скоро с вами свяжемся 💌");
+    form.reset();
+  });
+}
